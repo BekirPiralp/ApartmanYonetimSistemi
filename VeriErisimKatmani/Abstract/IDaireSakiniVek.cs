@@ -2,7 +2,7 @@
 
 namespace VeriErisimKatmani.Abstract
 {
-    interface IDaireSakiniVek : IEntityRepositoryBase<DaireSakini>
+    public interface IDaireSakiniVek : IEntityRepositoryBase<DaireSakini>
     {
     }
 }

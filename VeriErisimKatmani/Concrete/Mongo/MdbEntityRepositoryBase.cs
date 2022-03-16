@@ -65,8 +65,8 @@ namespace VeriErisimKatmani.Concrete.Mongo
         {
             if (entity != null && entity.SNo > 0)
             {
-
-                _mongoCollection.UpdateOneAsync<TEntity>(p => p.SNo == entity.SNo, entity.ToJson());
+                _mongoCollection.FindOneAndUpdateAsync(p => p.SNo == entity.SNo, entity.ToJson()); //aramaya uygun olan ilk üye için
+                //_mongoCollection.UpdateOneAsync<TEntity>(p => p.SNo == entity.SNo, entity.ToJson()); //tekil olalanlar için
             }
             else
                 throw new Exception("Güncellenmek istenen veri gelmedi");
@@ -74,6 +74,8 @@ namespace VeriErisimKatmani.Concrete.Mongo
 
         public List<TEntity> HepsiniGetir(Expression<Func<TEntity, bool>> Filtre = null)
         {
+            if (Filtre == null)
+                Filtre = p => p.SNo > 0;
             List<TEntity> result= null;
             if (_mongoCollection.Find(Filtre).CountDocuments() > 0)
                 result = _mongoCollection.Find(Filtre).ToList<TEntity>();

@@ -146,6 +146,10 @@
       <Project>{3C6BB218-6004-4155-8ED1-6E2271135FFF}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VeriErisimKatmani\VeriErisimKatmani.csproj">
+      <Project>{D2C1EEC4-01DB-4700-A3F4-FC8F40319BF8}</Project>
+      <Name>VeriErisimKatmani</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Core\Compression\Snappy\lib\win\snappy32.dll" />
