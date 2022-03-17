@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3C6BB218-6004-4155-8ED1-6E2271135FFF}</ProjectGuid>
+    <ProjectGuid>{9EFD4566-6575-4745-9486-F7A6716C827C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EntityLayer</RootNamespace>
-    <AssemblyName>EntityLayer</AssemblyName>
+    <RootNamespace>IsYapmaKatmani</RootNamespace>
+    <AssemblyName>IsYapmaKatmani</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,14 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MongoDB.Bson, Version=2.15.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MongoDB.Bson.2.15.0\lib\net472\MongoDB.Bson.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,22 +41,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityDurum\SilDurum.cs" />
-    <Compile Include="Oznitelik\EntityAttribute.cs" />
+    <Compile Include="Abstract\IIsKatmaniAidatServisi.cs" />
+    <Compile Include="Abstract\IIsKatmaniApartmanServisi.cs" />
+    <Compile Include="Abstract\IIsKatmaniBorcServisi.cs" />
+    <Compile Include="Abstract\IIsKatmaniDaireSakiniServisi.cs" />
+    <Compile Include="Abstract\IIsKatmaniDaireServisi.cs" />
+    <Compile Include="Abstract\IIsKatmaniGiderServisi.cs" />
+    <Compile Include="Abstract\IIsKatmaniGiderTipServisi.cs" />
+    <Compile Include="Abstract\IIsKatmaniTemelServisi.cs" />
+    <Compile Include="Abstract\IIsKatmaniYoneticiServisi.cs" />
+    <Compile Include="Concrete\IsKatmaniTemelServisi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Somut\Aidat.cs" />
-    <Compile Include="Somut\Apartman.cs" />
-    <Compile Include="Somut\Borc.cs" />
-    <Compile Include="Somut\Daire.cs" />
-    <Compile Include="Somut\DaireSakini.cs" />
-    <Compile Include="Somut\Entity.cs" />
-    <Compile Include="Somut\Gider.cs" />
-    <Compile Include="Somut\GiderTip.cs" />
-    <Compile Include="Somut\Yonetici.cs" />
-    <Compile Include="Soyut\IEntity.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Entity\EntityLayer.csproj">
+      <Project>{3C6BB218-6004-4155-8ED1-6E2271135FFF}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VeriErisimKatmani\VeriErisimKatmani.csproj">
+      <Project>{D2C1EEC4-01DB-4700-A3F4-FC8F40319BF8}</Project>
+      <Name>VeriErisimKatmani</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -51,37 +51,37 @@ namespace Test
             #region Veri erişim katmanı testi
             MdbAidatVek AidatErisim = new MdbAidatVek();
 
-            // hepsini getirme testi
-            try
-            {
-                Console.WriteLine("// hepsini getirme testi");
-                EkranaBas(AidatErisim.HepsiniGetir());
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Hepsine getirme testinde hata oluştu.");
+            //// hepsini getirme testi
+            //try
+            //{
+            //    Console.WriteLine("// hepsini getirme testi");
+            //    EkranaBas(AidatErisim.HepsiniGetir());
+            //}
+            //catch (Exception)
+            //{
+            //    Console.WriteLine("Hepsine getirme testinde hata oluştu.");
                 
-            }
+            //}
 
 
-            // Ekleme Testi 
-            Console.WriteLine("// Ekleme Testi ");
-            try
-            {
-                AidatErisim.Ekle(new Aidat { Apartman = new MongoDB.Bson.ObjectId(), Ay = 120, Yil = 2022, Tutar = (decimal)15.78 });
-                EkranaBas(AidatErisim.HepsiniGetir());
+            //// Ekleme Testi 
+            //Console.WriteLine("// Ekleme Testi ");
+            //try
+            //{
+            //    AidatErisim.Ekle(new Aidat { Apartman = 2, Ay = 120, Yil = 2022, Tutar = (decimal)15.78 });
+            //    EkranaBas(AidatErisim.HepsiniGetir());
 
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Ekleme testinde hata oluştu");
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    Console.WriteLine("Ekleme testinde hata oluştu");
+            //}
             // Getirme Tesi
             Console.WriteLine("// Getirme Tesi");
             Aidat gelen = null;
             try
             {
-                gelen = AidatErisim.Getir(p => p.Yil == 2022 && p.Ay == 120);
+                gelen = AidatErisim.Getir(p => p.Yil == 2022 && p.SilDurum != true);//&& p.Ay == 120);
                 EkranaBas2(gelen);
 
             }
@@ -89,27 +89,29 @@ namespace Test
             {
                 Console.WriteLine("Getirme testinde hata oluştu");
             }
-            // Guncelle Testi
-            Console.WriteLine("// Guncelle Testi");
-            try
-            {
-                if(gelen != null)
-                    gelen.Ay = 150;
-                AidatErisim.Guncelle(gelen);
-                gelen = AidatErisim.Getir(p => p.Yil == 2022 && p.Ay == 150);
-                EkranaBas2(gelen);
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Guncelleme testinde hata oluştu");
-            }
+            //// Guncelle Testi
+            //Console.WriteLine("// Guncelle Testi");
+            //try
+            //{
+            //    if(gelen != null)
+            //        gelen.Ay = 150;
+            //    AidatErisim.Guncelle(gelen);
+            //    gelen = AidatErisim.Getir(p => p.Yil == 2022 && p.Ay == 150);
+            //    EkranaBas2(gelen);
+            //}
+            //catch (Exception)
+            //{
+            //    Console.WriteLine("Guncelleme testinde hata oluştu");
+            //}
 
             // silme Testi
             Console.WriteLine("// silme Testi");
             try
             {
+                Console.Write("Silinsinmi?:");
+                Console.ReadLine();
                 AidatErisim.Sil(gelen);
-                gelen = AidatErisim.Getir(p => p.Yil == 2022 && p.Ay == 12);
+                gelen = AidatErisim.Getir(p => p.Yil == 2022 && p.Ay == 120 );
                 EkranaBas2(gelen);
             }
             catch (Exception)
@@ -131,7 +133,7 @@ namespace Test
                 foreach (var aidat in aidats1)
                 {
                     Console.WriteLine($"id : {aidat.SNo}\nApartman : {aidat.Apartman}\nTutar : {aidat.Tutar}\nAy : {aidat.Ay}" +
-                        $"\nYıl : {aidat.Yil}");
+                        $"\nYıl : {aidat.Yil}\nSilinme Durumu: {aidat.SilDurum}");
                     Console.WriteLine();
                 }
                 Console.WriteLine("----------------------------- Ekrana Basma Bitti Çoklu ----------------------");

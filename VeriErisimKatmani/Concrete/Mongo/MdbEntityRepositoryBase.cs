@@ -10,11 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using VeriErisimKatmani.Abstract.Mongo;
 using VeriErisimKatmani.Abstract;
+using EntityLayer.EntityDurum;
 
 namespace VeriErisimKatmani.Concrete.Mongo
 {
     public class MdbEntityRepositoryBase<TEntity> : IMdbRepositoryBase<TEntity>
-        where TEntity : Entity
+        where TEntity : Entity, new ()
     {
         private EntityAttribute oznitelikler;
         protected string _collectionName;
@@ -39,14 +40,23 @@ namespace VeriErisimKatmani.Concrete.Mongo
 
         public void Ekle(TEntity entity)
         {
-            if(entity != null && entity.SNo == 0)
+            try
             {
-                entity.SNo = SiraNoAl(); 
-                _mongoCollection.InsertOneAsync(entity);
+                if (entity != null && entity.SNo == 0)
+                {
+                    entity.SNo = SiraNoAl();
+                    entity.SilDurum = SilDurum.Silinmemis;
+                    _mongoCollection.InsertOneAsync(entity);
+                }
+                else
+                {
+                    throw new Exception("Veri boştur.");
+                }
             }
-            else
+            catch (Exception e)
             {
-                throw new Exception("Veri boştur.");
+
+                throw new Exception("Ekleme işlemi sırasında hata oluştu."+$"\nDetay: \t{e.Message}");
             }
 
         }
@@ -54,22 +64,39 @@ namespace VeriErisimKatmani.Concrete.Mongo
         public TEntity Getir(Expression<Func<TEntity, bool>> Filtre)
         {
             TEntity result = null;
-            if (_mongoCollection.CountDocuments("{}") > (long)0)
-                result = _mongoCollection.Find(Filtre).FirstOrDefaultAsync().Result;
-            else
-                throw new Exception("Sistemde kayıtlı veri bulunamadı...");
+            try
+            {
+                if (_mongoCollection.CountDocuments("{}") > (long)0)
+                    result = _mongoCollection.Find(Filtre).FirstOrDefaultAsync().Result;
+                else
+                    result = null;
+                    //throw new Exception("Sistemde kayıtlı veri bulunamadı...");
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Getirme işleminde hata oluştu." + $"\nDetay: \t{e.Message}");
+            }
+            
             return result;
         }
 
         public void Guncelle(TEntity entity)
         {
-            if (entity != null && entity.SNo > 0)
+            try
             {
-                _mongoCollection.FindOneAndUpdateAsync(p => p.SNo == entity.SNo, entity.ToJson()); //aramaya uygun olan ilk üye için
-                //_mongoCollection.UpdateOneAsync<TEntity>(p => p.SNo == entity.SNo, entity.ToJson()); //tekil olalanlar için
+                if (entity != null && entity.SNo > 0)
+                {
+                    _mongoCollection.FindOneAndUpdateAsync(p => p.SNo == entity.SNo, entity.ToJson()); //aramaya uygun olan ilk üye için
+                                                                                                       //_mongoCollection.UpdateOneAsync<TEntity>(p => p.SNo == entity.SNo, entity.ToJson()); //tekil olalanlar için
+                }
+                else
+                    throw new Exception("Güncellenmek istenen veri gelmedi");
             }
-            else
-                throw new Exception("Güncellenmek istenen veri gelmedi");
+            catch (Exception e)
+            {
+
+                throw new Exception("Güncellenmeişleminde hata oluştu.\n"+$"Detay : \t{e.Message}");
+            }
         }
 
         public List<TEntity> HepsiniGetir(Expression<Func<TEntity, bool>> Filtre = null)
@@ -77,23 +104,39 @@ namespace VeriErisimKatmani.Concrete.Mongo
             if (Filtre == null)
                 Filtre = p => p.SNo > 0;
             List<TEntity> result= null;
-            if (_mongoCollection.Find(Filtre).CountDocuments() > 0)
-                result = _mongoCollection.Find(Filtre).ToList<TEntity>();
-            else
-                throw new Exception("Veriler getiriliken hata oluştu. Boş veri");
+            try
+            {
+                if (_mongoCollection.Find(Filtre).CountDocuments() > 0)
+                    result = _mongoCollection.Find(Filtre).ToList<TEntity>();
+                else
+                    result = null;
+                    //throw new Exception("Boş veri");
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Veriler getiriliken hata oluştu.\n" + $"Detay : \t{e.Message}");
+            }
             return result;
         }
 
         public void Sil(TEntity entity)
         {
-            if (entity != null && entity.SNo > 0)
-            //_mongoCollection.DeleteOne<TEntity>(p => p.SNo == entity.SNo);
+            try
             {
-                entity.SilDurum = true;
-                Guncelle(entity);
+                if (entity != null && entity.SNo > 0)
+                {
+                    //_mongoCollection.FindOneAndDeleteAsync<TEntity>(p => p.SNo == entity.SNo);
+                    entity.SilDurum = SilDurum.Silinmis;
+                    Guncelle(entity);
+                }
+                else
+                    throw new Exception("Boş veri");
             }
-            else
-                throw new Exception("Silmek için göderilen veride hata oluştu");
+            catch (Exception e)
+            {
+
+                throw new Exception("Silme işleminde hata oluştu." + $"\nDetay : \t{e.Message}"); ;
+            }
         }
 
         public int SiraNoAl()

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeriErisimKatmani", "VeriEr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{BA8EB384-E717-4432-9256-12F15D713B70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsYapmaKatmani", "IsYapmaKatmani\IsYapmaKatmani.csproj", "{9EFD4566-6575-4745-9486-F7A6716C827C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BA8EB384-E717-4432-9256-12F15D713B70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA8EB384-E717-4432-9256-12F15D713B70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA8EB384-E717-4432-9256-12F15D713B70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EFD4566-6575-4745-9486-F7A6716C827C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EFD4566-6575-4745-9486-F7A6716C827C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EFD4566-6575-4745-9486-F7A6716C827C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EFD4566-6575-4745-9486-F7A6716C827C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

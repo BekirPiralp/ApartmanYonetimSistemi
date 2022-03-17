@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace VeriErisimKatmani.Abstract
 {
     public interface IEntityRepositoryBase<TEntity>:IEntityBase<TEntity>
-         where TEntity : Entity, IEntity
+         where TEntity : Entity, IEntity,new()
     {
     }
 }

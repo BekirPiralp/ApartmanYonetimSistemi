@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace VeriErisimKatmani.Abstract
 {
     public interface IEntityBase<TEntity>
-        where TEntity : Entity,IEntity
+        where TEntity : Entity,IEntity ,new()
     {
         //Belirlernene en temel işlemler
         TEntity Getir(Expression<Func<TEntity, bool>> Filtre);
