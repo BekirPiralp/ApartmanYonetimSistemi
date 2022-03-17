@@ -150,7 +150,6 @@ namespace VeriErisimKatmani.Concrete.Mongo
             result++;
             return result;
         }
-
         
     }
 }

@@ -13,12 +13,12 @@ namespace IsYapmaKatmani.Concrete
 {
     public class IsKatmaniTemelServisi<TEntity,TEntityVek> : IIsKatmaniTemelServisi<TEntity>
         where TEntity : Entity,new ()
-        where TEntityVek : IEntityRepositoryBase<TEntity>,new ()
+        where TEntityVek : class,IEntityRepositoryBase<TEntity>
     {
-        private TEntityVek _entityVek;
-        public IsKatmaniTemelServisi()
+        internal TEntityVek _entityVek;
+        public IsKatmaniTemelServisi(TEntityVek entityVek)
         {
-            _entityVek = new TEntityVek();
+            _entityVek = entityVek;
         }
 
         #region Ekleme İşlemleri

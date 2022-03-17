@@ -50,7 +50,15 @@
     <Compile Include="Abstract\IIsKatmaniGiderTipServisi.cs" />
     <Compile Include="Abstract\IIsKatmaniTemelServisi.cs" />
     <Compile Include="Abstract\IIsKatmaniYoneticiServisi.cs" />
+    <Compile Include="Concrete\IsKatmaniAidatServisi.cs" />
+    <Compile Include="Concrete\IsKatmaniApartmanServisi.cs" />
+    <Compile Include="Concrete\IsKatmaniBorcServisi.cs" />
+    <Compile Include="Concrete\IsKatmaniDaireSakiniServisi.cs" />
+    <Compile Include="Concrete\IsKatmaniDaireServisi.cs" />
+    <Compile Include="Concrete\IsKatmaniGiderServisi.cs" />
+    <Compile Include="Concrete\IsKatmaniGiderTipServisi.cs" />
     <Compile Include="Concrete\IsKatmaniTemelServisi.cs" />
+    <Compile Include="Concrete\IsKatmaniYoneticiServisi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
