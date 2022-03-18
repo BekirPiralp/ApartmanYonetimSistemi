@@ -11,12 +11,12 @@ using VeriErisimKatmani.Abstract;
 
 namespace IsYapmaKatmani.Concrete
 {
-    public class IsKatmaniTemelServisi<TEntity,TEntityVek> : IIsKatmaniTemelServisi<TEntity>
+    public class IsKatmaniTemelServisi<TEntity,IEntityVek> : IIsKatmaniTemelServisi<TEntity>
         where TEntity : Entity,new ()
-        where TEntityVek : class,IEntityRepositoryBase<TEntity>
+        where IEntityVek : class,IEntityRepositoryBase<TEntity>
     {
-        internal TEntityVek _entityVek;
-        public IsKatmaniTemelServisi(TEntityVek entityVek)
+        internal IEntityVek _entityVek;
+        public IsKatmaniTemelServisi(IEntityVek entityVek)
         {
             _entityVek = entityVek;
         }

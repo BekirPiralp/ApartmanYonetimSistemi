@@ -1,5 +1,7 @@
 ﻿using EntityLayer.Oznitelik;
 using EntityLayer.Somut;
+using IsYapmaKatmani.Abstract;
+using IsYapmaKatmani.NesneOlustur;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -148,6 +150,7 @@ namespace Test
                     Console.WriteLine();               
                 Console.WriteLine("----------------------------- Ekrana Basma Bitti Tekli----------------------");
             }
+
         }
     }
 }

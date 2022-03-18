@@ -59,6 +59,7 @@
     <Compile Include="Concrete\IsKatmaniGiderTipServisi.cs" />
     <Compile Include="Concrete\IsKatmaniTemelServisi.cs" />
     <Compile Include="Concrete\IsKatmaniYoneticiServisi.cs" />
+    <Compile Include="NesneOlustur\IsKatmaniNesneOlusturucu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

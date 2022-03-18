@@ -146,6 +146,10 @@
       <Project>{3C6BB218-6004-4155-8ED1-6E2271135FFF}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IsYapmaKatmani\IsYapmaKatmani.csproj">
+      <Project>{9EFD4566-6575-4745-9486-F7A6716C827C}</Project>
+      <Name>IsYapmaKatmani</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VeriErisimKatmani\VeriErisimKatmani.csproj">
       <Project>{D2C1EEC4-01DB-4700-A3F4-FC8F40319BF8}</Project>
       <Name>VeriErisimKatmani</Name>
