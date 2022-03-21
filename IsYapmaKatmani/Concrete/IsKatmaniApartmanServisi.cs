@@ -11,7 +11,7 @@ namespace IsYapmaKatmani.Concrete
 {
     public class IsKatmaniApartmanServisi : IsKatmaniTemelServisi<Apartman,IApartmanVek>,IIsKatmaniApartmanServisi
     {
-        public IsKatmaniApartmanServisi(IApartmanVek apartmanVek):base(apartmanVek)
+        internal IsKatmaniApartmanServisi(IApartmanVek apartmanVek):base(apartmanVek)
         {
 
         }

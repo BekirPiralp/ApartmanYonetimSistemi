@@ -11,7 +11,7 @@ namespace IsYapmaKatmani.Concrete
 {
     public class IsKatmaniDaireServisi : IsKatmaniTemelServisi<Daire,IDaireVek>, IIsKatmaniDaireServisi
     {
-        public IsKatmaniDaireServisi(IDaireVek daireVek):base(daireVek)
+        internal IsKatmaniDaireServisi(IDaireVek daireVek):base(daireVek)
         {
 
         }

@@ -1,4 +1,5 @@
-﻿using IsYapmaKatmani.Concrete;
+﻿using IsYapmaKatmani.Abstract;
+using IsYapmaKatmani.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,26 +12,26 @@ namespace IsYapmaKatmani.NesneOlustur
     public class IsKatmaniNesneOlusturucu 
     {
         /*--- iş katmanı ile ilgili nesneleri oluşturmak ve ayarlamak için olan bölüm ---*/
-
-        public IsKatmaniAidatServisi aidatServisi { get; }
-        public IsKatmaniApartmanServisi apartmanServisi { get; }
-        public IsKatmaniBorcServisi borcServisi { get; }
-        public IsKatmaniDaireSakiniServisi daireSakiniServisi { get; }
-        public IsKatmaniDaireServisi daireServisi { get; }
-        public IsKatmaniGiderServisi giderServisi { get; }
-        public IsKatmaniGiderTipServisi giderTipServisi { get; }
-        public IsKatmaniYoneticiServisi yoneticiServisi { get; }
+        
+        public IIsKatmaniAidatServisi AidatServisi { get; }
+        public IIsKatmaniApartmanServisi ApartmanServisi { get; }
+        public IIsKatmaniBorcServisi BorcServisi { get; }
+        public IIsKatmaniDaireSakiniServisi DaireSakiniServisi { get; }
+        public IIsKatmaniDaireServisi DaireServisi { get; }
+        public IIsKatmaniGiderServisi GiderServisi { get; }
+        public IIsKatmaniGiderTipServisi GiderTipServisi { get; }
+        public IIsKatmaniYoneticiServisi YoneticiServisi { get; }
 
         private IsKatmaniNesneOlusturucu()
         {
-            aidatServisi = new IsKatmaniAidatServisi(new MdbAidatVek());
-            apartmanServisi = new IsKatmaniApartmanServisi(new MdbApartmanVek());
-            borcServisi = new IsKatmaniBorcServisi(new MdbBorcVek());
-            daireSakiniServisi = new IsKatmaniDaireSakiniServisi(new MdbDaireSakiniVek());
-            daireServisi = new IsKatmaniDaireServisi(new MdbDaireVek());
-            giderServisi = new IsKatmaniGiderServisi(new MdbGiderVek());
-            giderTipServisi = new IsKatmaniGiderTipServisi(new MdbGiderTipVek());
-            yoneticiServisi = new IsKatmaniYoneticiServisi(new MdbYoneticiVek());
+            AidatServisi = new IsKatmaniAidatServisi(new MdbAidatVek());
+            ApartmanServisi = new IsKatmaniApartmanServisi(new MdbApartmanVek());
+            BorcServisi = new IsKatmaniBorcServisi(new MdbBorcVek());
+            DaireSakiniServisi = new IsKatmaniDaireSakiniServisi(new MdbDaireSakiniVek());
+            DaireServisi = new IsKatmaniDaireServisi(new MdbDaireVek());
+            GiderServisi = new IsKatmaniGiderServisi(new MdbGiderVek());
+            GiderTipServisi = new IsKatmaniGiderTipServisi(new MdbGiderTipVek());
+            YoneticiServisi = new IsKatmaniYoneticiServisi(new MdbYoneticiVek());
         }
 
         private static IsKatmaniNesneOlusturucu nesneOlusturucu = null;
@@ -48,9 +49,6 @@ namespace IsYapmaKatmani.NesneOlustur
             
             return nesneOlusturucu;
         }
-        
-        
-
 
     }
 }

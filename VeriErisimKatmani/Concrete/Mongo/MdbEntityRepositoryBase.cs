@@ -37,15 +37,20 @@ namespace VeriErisimKatmani.Concrete.Mongo
             _mongoCollection = _mongoDatabase.GetCollection<TEntity>(_collectionName);
         }
 
-
-        public void Ekle(TEntity entity)
+        /// <summary>
+        /// int olarak id yani SNO döndürür. 0 ise nesne kayıt edilememiştir.
+        /// </summary>
+        /// <returns></returns>
+        public int Ekle(TEntity entity)
         {
+            int resulbyID = 0;
             try
             {
                 if (entity != null && entity.SNo == 0)
                 {
                     entity.SNo = SiraNoAl();
                     entity.SilDurum = SilDurum.Silinmemis;
+                    resulbyID = entity.SNo;
                     _mongoCollection.InsertOneAsync(entity);
                 }
                 else
@@ -58,7 +63,7 @@ namespace VeriErisimKatmani.Concrete.Mongo
 
                 throw new Exception("Ekleme işlemi sırasında hata oluştu."+$"\nDetay: \t{e.Message}");
             }
-
+            return resulbyID;
         }
 
         public TEntity Getir(Expression<Func<TEntity, bool>> Filtre)

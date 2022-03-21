@@ -11,7 +11,7 @@ namespace IsYapmaKatmani.Concrete
 {
     public class IsKatmaniYoneticiServisi: IsKatmaniTemelServisi<Yonetici,IYoneticiVek>,IIsKatmaniYoneticiServisi
     {
-        public IsKatmaniYoneticiServisi(IYoneticiVek yoneticiVek):base(yoneticiVek)
+        internal IsKatmaniYoneticiServisi(IYoneticiVek yoneticiVek):base(yoneticiVek)
         {
         }
     }

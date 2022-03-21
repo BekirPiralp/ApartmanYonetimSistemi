@@ -11,7 +11,7 @@ namespace IsYapmaKatmani.Concrete
 {
     public class IsKatmaniGiderTipServisi : IsKatmaniTemelServisi<GiderTip,IGiderTipVek>,IIsKatmaniGiderTipServisi
     {
-        public IsKatmaniGiderTipServisi(IGiderTipVek giderTipVek):base(giderTipVek)
+        internal IsKatmaniGiderTipServisi(IGiderTipVek giderTipVek):base(giderTipVek)
         {
 
         }

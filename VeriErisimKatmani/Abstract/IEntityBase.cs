@@ -16,7 +16,7 @@ namespace VeriErisimKatmani.Abstract
         TEntity Getir(Expression<Func<TEntity, bool>> Filtre);
         List<TEntity> HepsiniGetir(Expression<Func<TEntity, bool>> Filtre = null);
 
-        void Ekle(TEntity entity);
+        int Ekle(TEntity entity); // int olarak SNO yani id Parametresini döndürür, 0 ise kayıt gerçekleşmemiştir.
 
         void Guncelle(TEntity entity);
 

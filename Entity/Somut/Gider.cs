@@ -8,6 +8,6 @@ namespace EntityLayer.Somut
         public decimal Tutar { get; set; }
         public int Ay { get; set; }
         public int Yil { get; set; }
-        public string Tip { get; set; }
+        public int Tip { get; set; }
     }
 }

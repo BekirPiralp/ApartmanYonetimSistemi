@@ -22,13 +22,17 @@ namespace IsYapmaKatmani.Concrete
         }
 
         #region Ekleme İşlemleri
-
-        public void Ekle(TEntity entity)
+        /// <summary>
+        ///  İd yani SNO dödürür. 0 ise nesne kayıt edilmemiştir. 
+        /// </summary>
+        /// <returns></returns>
+        public int Ekle(TEntity entity)
         {
+            int resultById = 0;
             try
             {
                 if (entity != null && entity.SNo == 0)
-                    _entityVek.Ekle(entity);
+                    resultById=_entityVek.Ekle(entity);
                 else
                     throw new Exception("Eklemek için gelen veri eksik");
             }
@@ -36,6 +40,7 @@ namespace IsYapmaKatmani.Concrete
             {
                 throw new Exception("Ekleme işlemi sırasında hata oluştu");
             }
+            return resultById;
         }
 
         public void Ekle(List<TEntity> entities)

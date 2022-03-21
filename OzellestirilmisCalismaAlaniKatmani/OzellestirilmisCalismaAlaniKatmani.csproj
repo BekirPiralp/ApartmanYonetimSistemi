@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95DDCB92-7B7F-40E4-AF80-F731CC527281}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OzellestirilmisCalismaAlaniKatmani</RootNamespace>
+    <AssemblyName>OzellestirilmisCalismaAlaniKatmani</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\ApartmanOCAK\IBorcOCAK.cs" />
+    <Compile Include="Abstract\ApartmanOCAK\IDaireOCAK.cs" />
+    <Compile Include="Abstract\ApartmanOCAK\IGiderlerOCAK.cs" />
+    <Compile Include="Abstract\ApartmanOCAK\IGirisOCAK.cs" />
+    <Compile Include="Abstract\ApartmanOCAK\ITahakkukOCAK.cs" />
+    <Compile Include="Concrete\ApartmanOCAK\BorcOCAK.cs" />
+    <Compile Include="Concrete\ApartmanOCAK\DaireOCAK.cs" />
+    <Compile Include="Concrete\ApartmanOCAK\GiderlerOCAK.cs" />
+    <Compile Include="Concrete\ApartmanOCAK\GirisOCAK.cs" />
+    <Compile Include="Concrete\ApartmanOCAK\TahakkukOCAK.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Concrete\SistemOCAK\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entity\EntityLayer.csproj">
+      <Project>{3C6BB218-6004-4155-8ED1-6E2271135FFF}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IsYapmaKatmani\IsYapmaKatmani.csproj">
+      <Project>{9EFD4566-6575-4745-9486-F7A6716C827C}</Project>
+      <Name>IsYapmaKatmani</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

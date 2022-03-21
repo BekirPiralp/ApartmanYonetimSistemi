@@ -9,5 +9,7 @@ namespace IsYapmaKatmani.Abstract
 {
     public interface IIsKatmaniAidatServisi : IIsKatmaniTemelServisi<Aidat>
     {
+        List<Aidat> GetirSilinmeyen(int Apartman);
+        Aidat GetirSilinmeyenSonAidat(int Apartman); //List<Aidat> GetirSilinmeyen(int Apartman); methodunu da kendi içinde kullanır
     }
 }

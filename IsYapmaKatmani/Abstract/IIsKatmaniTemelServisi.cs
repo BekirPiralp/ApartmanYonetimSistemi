@@ -55,7 +55,7 @@ namespace IsYapmaKatmani.Abstract
         #endregion
 
         #region Ekleme işlemleri
-        void Ekle(TEntity entity);
+        int Ekle(TEntity entity); // int olarak id yani SNO döndürür. 0 ise nesne kayıt edilememiştir.
         void Ekle(List<TEntity> entities); 
         #endregion
     }

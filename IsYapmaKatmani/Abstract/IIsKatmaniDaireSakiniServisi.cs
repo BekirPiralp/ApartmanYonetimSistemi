@@ -9,5 +9,10 @@ namespace IsYapmaKatmani.Abstract
 {
     public interface IIsKatmaniDaireSakiniServisi : IIsKatmaniTemelServisi<DaireSakini>
     {
+        List<DaireSakini> GetirSilinmeyen(int apartman);
+        List<DaireSakini> GetirSilinen(int apartman);
+        List<DaireSakini> GetirHepsi(int apartman);
+
+        DaireSakini Getir(string TC);
     }
 }
