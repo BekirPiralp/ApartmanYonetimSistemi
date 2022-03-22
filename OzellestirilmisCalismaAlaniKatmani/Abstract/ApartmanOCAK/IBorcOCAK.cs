@@ -23,6 +23,8 @@ namespace OzellestirilmisCalismaAlaniKatmani.Abstract.ApartmanOCAK
 
         decimal Borclumu(int apartman, int daireSakini);//borçlu değilse 0 diğer türlü >0 döner
 
+        void BorcOde(decimal OdemeTutari, int Apartman, int DaireSakini); //Borç ödeme işlemi borcu var mı kontrol edilecek var ise zaman olarak en eski borcdan ödemeye başlanacak;
+
 
 
     }

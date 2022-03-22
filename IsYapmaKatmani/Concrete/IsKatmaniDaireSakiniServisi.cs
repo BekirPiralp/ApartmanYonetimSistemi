@@ -22,7 +22,7 @@ namespace IsYapmaKatmani.Concrete
             DaireSakini result = null;
             try
             {
-                if (TC.Trim() != "" && TC.Trim().Length == 11)
+                if (!TC.Trim().Equals("") && TC.Trim().Length == 11)
                     result = this._entityVek.Getir(p => p.TC.Trim().Equals(TC.Trim()));
                 else
                     throw new ArgumentNullException();

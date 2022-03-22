@@ -51,6 +51,7 @@
     <Compile Include="Concrete\ApartmanOCAK\GiderlerOCAK.cs" />
     <Compile Include="Concrete\ApartmanOCAK\GirisOCAK.cs" />
     <Compile Include="Concrete\ApartmanOCAK\TahakkukOCAK.cs" />
+    <Compile Include="NesneOlusturucu\OCAKOlusturucu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

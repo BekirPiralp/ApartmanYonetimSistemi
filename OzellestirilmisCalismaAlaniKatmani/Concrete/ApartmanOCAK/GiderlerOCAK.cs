@@ -47,7 +47,7 @@ namespace OzellestirilmisCalismaAlaniKatmani.Concrete.ApartmanOCAK
 
         public void GiderOlustur(int apartman,decimal tutar,String aciklama)
         {
-            if (aciklama.Trim() == "" && apartman <= 0 && !(tutar>0))
+            if (aciklama.Trim().Equals("") && apartman <= 0 && !(tutar>0))
                 throw new ArgumentNullException("Lütfen parametleri eksiksiz yollayınız");
 
             try

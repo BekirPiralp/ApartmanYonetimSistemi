@@ -18,6 +18,7 @@ namespace OzellestirilmisCalismaAlaniKatmani.Concrete.ApartmanOCAK
         public GirisOCAK()
         {
             _daireSakiniServisi = IsKatmaniNesneOlusturucu.Olusturucu().DaireSakiniServisi;
+            _yoneticiServisi = IsKatmaniNesneOlusturucu.Olusturucu().YoneticiServisi;
         }
         public DaireSakini DaireSakiniGetir(string TC)
         {

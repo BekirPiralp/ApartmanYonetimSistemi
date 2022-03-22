@@ -1,5 +1,8 @@
-﻿namespace EntityLayer.Somut
+﻿using EntityLayer.Oznitelik;
+
+namespace EntityLayer.Somut
 {
+    [Entity(CollectionName = "GiderTipleri")]
     public class GiderTip : Entity
     {
         public string Ad { get; set; }

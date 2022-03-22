@@ -45,8 +45,7 @@ namespace OzellestirilmisCalismaAlaniKatmani.Concrete.ApartmanOCAK
 
             return result;
         }
-
-        
+  
         public void AidatTanimla(int apartman, decimal tutar)
         {
             if (apartman > 0 && tutar > 0)

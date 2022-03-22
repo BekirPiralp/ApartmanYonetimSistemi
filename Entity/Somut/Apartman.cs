@@ -1,5 +1,8 @@
-﻿namespace EntityLayer.Somut
+﻿using EntityLayer.Oznitelik;
+
+namespace EntityLayer.Somut
 {
+    [Entity(CollectionName = "Apartmanlar")]
     public class Apartman : Entity
     {
         string Ad { get; set; }

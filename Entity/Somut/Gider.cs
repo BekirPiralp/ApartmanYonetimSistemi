@@ -1,7 +1,9 @@
-﻿using MongoDB.Bson;
+﻿using EntityLayer.Oznitelik;
+using MongoDB.Bson;
 
 namespace EntityLayer.Somut
 {
+    [Entity(CollectionName = "Giderler")]
     public class Gider : Entity
     {
         public int Apartman { get; set; }

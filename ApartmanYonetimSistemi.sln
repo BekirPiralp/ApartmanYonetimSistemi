@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsYapmaKatmani", "IsYapmaKa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzellestirilmisCalismaAlaniKatmani", "OzellestirilmisCalismaAlaniKatmani\OzellestirilmisCalismaAlaniKatmani.csproj", "{95DDCB92-7B7F-40E4-AF80-F731CC527281}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUygulamaKatmani", "WebUygulamaKatmani\WebUygulamaKatmani.csproj", "{DFBBE255-B86D-4AF3-89EE-2F75A5FA7D1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{95DDCB92-7B7F-40E4-AF80-F731CC527281}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95DDCB92-7B7F-40E4-AF80-F731CC527281}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95DDCB92-7B7F-40E4-AF80-F731CC527281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFBBE255-B86D-4AF3-89EE-2F75A5FA7D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFBBE255-B86D-4AF3-89EE-2F75A5FA7D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFBBE255-B86D-4AF3-89EE-2F75A5FA7D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFBBE255-B86D-4AF3-89EE-2F75A5FA7D1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
