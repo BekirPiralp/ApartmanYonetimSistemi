@@ -91,6 +91,10 @@ namespace VeriErisimKatmani.Concrete.Mongo
             {
                 if (entity != null && entity.SNo > 0)
                 {
+                    TEntity entity1 = null;
+                    entity1 = _mongoCollection.Find(p => p.SNo == entity.SNo).FirstOrDefaultAsync().Result; //object id için önlem
+                    if (entity1 != null & entity.SNo == entity1.SNo)
+                        entity._id = entity1._id;
                     _mongoCollection.FindOneAndUpdateAsync(p => p.SNo == entity.SNo, entity.ToJson()); //aramaya uygun olan ilk üye için
                                                                                                        //_mongoCollection.UpdateOneAsync<TEntity>(p => p.SNo == entity.SNo, entity.ToJson()); //tekil olalanlar için
                 }

@@ -1,10 +1,6 @@
 ﻿using EntityLayer.Somut;
 using OzellestirilmisCalismaAlaniKatmani.Abstract.ApartmanOCAK;
 using OzellestirilmisCalismaAlaniKatmani.NesneOlusturucu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Services;
 
 namespace WebUygulamaKatmani

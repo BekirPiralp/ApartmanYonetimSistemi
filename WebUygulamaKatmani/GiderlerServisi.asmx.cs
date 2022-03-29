@@ -3,8 +3,6 @@ using OzellestirilmisCalismaAlaniKatmani.Abstract.ApartmanOCAK;
 using OzellestirilmisCalismaAlaniKatmani.NesneOlusturucu;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Services;
 
 namespace WebUygulamaKatmani
@@ -27,7 +25,7 @@ namespace WebUygulamaKatmani
         [WebMethod]
         public void GiderOlustur(int apartman, decimal tutar, int tip)
         {
-            if(apartman >0 && tutar > 0 && tip > 0)
+            if (apartman > 0 && tutar > 0 && tip > 0)
             {
                 _giderlerOCAK.GiderOlustur(apartman, tutar, tip);
             }
@@ -58,7 +56,7 @@ namespace WebUygulamaKatmani
         {
             List<Gider> result = null;
             if (apartman > 0 && ay > 0 && yil > 0)
-                result = _giderlerOCAK.GiderGetir(apartman,ay,yil);
+                result = _giderlerOCAK.GiderGetir(apartman, ay, yil);
             if (result != null && result.Count == 0)
                 result = null;
             return result;

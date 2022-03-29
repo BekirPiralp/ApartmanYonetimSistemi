@@ -1,10 +1,7 @@
 ﻿using EntityLayer.Somut;
 using OzellestirilmisCalismaAlaniKatmani.Abstract.ApartmanOCAK;
 using OzellestirilmisCalismaAlaniKatmani.NesneOlusturucu;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Services;
 
 namespace WebUygulamaKatmani
@@ -20,7 +17,7 @@ namespace WebUygulamaKatmani
     public class BorcServisi : System.Web.Services.WebService
     {
         IBorcOCAK _borcOCAK;
-        
+
         public BorcServisi()
         {
             _borcOCAK = OCAKOlusturucu.Olustur().BorcOCAK;
@@ -30,7 +27,7 @@ namespace WebUygulamaKatmani
         public List<Borc> OdenmemisBorclar(int Apartman, int DaireSakini)
         {
             List<Borc> result = null;
-            if(Apartman > 0 && DaireSakini > 0)
+            if (Apartman > 0 && DaireSakini > 0)
                 result = _borcOCAK.GecmisOdenmemisBorcuGetir(Apartman, DaireSakini);
             return result;
         }
@@ -54,7 +51,7 @@ namespace WebUygulamaKatmani
         }
 
         [WebMethod]
-        public decimal ToplamBorc(int Apartman,int DaireSakini)
+        public decimal ToplamBorc(int Apartman, int DaireSakini)
         {
             decimal result = 0;
             if (Apartman > 0 && DaireSakini > 0)
@@ -72,6 +69,6 @@ namespace WebUygulamaKatmani
 
         }
 
-        
+
     }
 }

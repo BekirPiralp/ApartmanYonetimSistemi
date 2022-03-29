@@ -1,10 +1,6 @@
 ﻿using EntityLayer.Somut;
 using OzellestirilmisCalismaAlaniKatmani.Abstract.ApartmanOCAK;
 using OzellestirilmisCalismaAlaniKatmani.NesneOlusturucu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Services;
 
 namespace WebUygulamaKatmani
@@ -25,7 +21,7 @@ namespace WebUygulamaKatmani
             _daireOCAK = OCAKOlusturucu.Olustur().DaireOCAK;
         }
 
-        [WebMethod(MessageName ="Daire nesne olarak verilirse")]
+        [WebMethod(MessageName = "Daire nesne olarak verilirse")]
         public void DaireTanimlaNesne(int Apartman, DaireSakini DaireSakini, Daire Daire)
         {
             if (Apartman > 0 && DaireSakini != null && Daire != null)
