@@ -47,7 +47,6 @@ namespace WebUygulamaKatmani.Controllers
             return Ok();
         }
 
-
         //[Route("aidat/getir")]
         [HttpGet()]
         [Route("aidat/getir")]

@@ -53,7 +53,7 @@ namespace OzellestirilmisCalismaAlaniKatmani.Concrete.ApartmanOCAK
                 try
                 {
                     Aidat aidat = null;
-                    aidat = _aidatServisi.Getir(p => p.Yil == DateTime.Now.Year && p.Ay == DateTime.Now.Month);
+                    aidat = _aidatServisi.Getir(p => p.Yil == DateTime.Now.Year && p.Ay == DateTime.Now.Month && p.Apartman == apartman);
                     if (aidat != null)
                     {
                         aidat.Tutar = tutar;
