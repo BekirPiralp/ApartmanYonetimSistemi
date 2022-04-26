@@ -116,7 +116,7 @@ namespace VeriErisimKatmani.Concrete.Mongo
             try
             {
                 if (_mongoCollection.Find(Filtre).CountDocuments() > 0)
-                    result = _mongoCollection.Find(Filtre).ToList<TEntity>();
+                    result = _mongoCollection.Find(Filtre).ToListAsync<TEntity>().Result;
                 else
                     result = null;
                     //throw new Exception("Boş veri");

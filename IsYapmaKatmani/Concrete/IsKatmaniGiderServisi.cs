@@ -68,11 +68,11 @@ namespace IsYapmaKatmani.Concrete
         public List<Gider> GetirHepsi(int apartman, int ay, int yil)
         {
             List<Gider> donusDegeri = null;
-            if (apartman <= 0 && ay >0 && yil > 0)
+            if (apartman <= 0 && ay <=0 && yil <= 0)
                 throw new ArgumentNullException("Lütfen gerekli bilgileri eksiksiz giriniz");
             try
             {
-                donusDegeri = _entityVek.HepsiniGetir(p => p.Apartman == apartman && p.Ay == ay && p.Yil == yil);
+                donusDegeri = _entityVek.HepsiniGetir(p => p.Apartman.Equals(apartman) && p.Ay.Equals(ay) && p.Yil.Equals(yil));
             }
             catch (Exception)
             {
@@ -84,7 +84,7 @@ namespace IsYapmaKatmani.Concrete
         public List<Gider> GetirSilinen(int apartman, int ay, int yil)
         {
             List<Gider> donusDegeri = null;
-            if (apartman <= 0 && ay > 0 && yil > 0)
+            if (apartman <= 0 && ay <= 0 && yil <= 0)
                 throw new ArgumentNullException("Lütfen gerekli bilgileri eksiksiz giriniz");
             try
             {
@@ -100,7 +100,7 @@ namespace IsYapmaKatmani.Concrete
         public List<Gider> GetirSilinmeyen(int apartman, int ay, int yil)
         {
             List<Gider> donusDegeri = null;
-            if (apartman <= 0 && ay > 0 && yil > 0)
+            if (apartman <= 0 && ay <= 0 && yil <= 0)
                 throw new ArgumentNullException("Lütfen gerekli bilgileri eksiksiz giriniz");
             try
             {

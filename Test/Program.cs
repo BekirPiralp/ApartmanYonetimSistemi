@@ -119,6 +119,9 @@ namespace Test
                 GirisOCAK girisOCAK = new GirisOCAK();
                 var al =girisOCAK.DaireSakiniGetir("12345678910");
                 Console.WriteLine(al.Ad + " " + al.Soyad);
+                GiderlerOCAK giderlerOCAK = new GiderlerOCAK();
+                giderlerOCAK.GiderGetir(1);
+                giderlerOCAK.GiderGetir(apartman: 1, ay: 4, yil: 2022);
             }
             catch (Exception)
             {
