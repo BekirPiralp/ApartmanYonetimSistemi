@@ -3,6 +3,7 @@ using EntityLayer.Somut;
 using IsYapmaKatmani.Abstract;
 using IsYapmaKatmani.NesneOlustur;
 using MongoDB.Driver;
+using OzellestirilmisCalismaAlaniKatmani.Concrete.ApartmanOCAK;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -112,13 +113,16 @@ namespace Test
             {
                 Console.Write("Silinsinmi?:");
                 Console.ReadLine();
-                AidatErisim.Sil(gelen);
+                //AidatErisim.Sil(gelen);
                 gelen = AidatErisim.Getir(p => p.Yil == 2022 && p.Ay == 120 );
                 EkranaBas2(gelen);
+                GirisOCAK girisOCAK = new GirisOCAK();
+                var al =girisOCAK.DaireSakiniGetir("12345678910");
+                Console.WriteLine(al.Ad + " " + al.Soyad);
             }
             catch (Exception)
             {
-                Console.WriteLine("Silme testinde hata oluştu");
+                Console.WriteLine($"Silme testinde hata oluştu.");
             }
 
             EkranaBas(AidatErisim.HepsiniGetir());

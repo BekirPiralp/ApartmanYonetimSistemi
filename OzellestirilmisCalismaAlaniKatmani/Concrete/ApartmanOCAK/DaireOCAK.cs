@@ -99,5 +99,19 @@ namespace OzellestirilmisCalismaAlaniKatmani.Concrete.ApartmanOCAK
             else
                 throw new ArgumentNullException();
         }
+
+        public List<DaireSakini> DaireSakinleriniGetir(int apartman)
+        {
+            List<DaireSakini> result=null;
+            try
+            {
+                result = _daireSakiniServisi.GetirSilinmeyen(apartman);
+            }
+            catch(Exception hata)
+            {
+                throw new Exception("Daire sakinleri getirilirken hata oluştu.");
+            }
+            return result;
+        }
     }
 }

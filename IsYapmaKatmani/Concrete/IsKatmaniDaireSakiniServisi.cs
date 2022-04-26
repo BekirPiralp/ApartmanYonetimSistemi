@@ -23,13 +23,13 @@ namespace IsYapmaKatmani.Concrete
             try
             {
                 if (!TC.Trim().Equals("") && TC.Trim().Length == 11)
-                    result = this._entityVek.Getir(p => p.TC.Trim().Equals(TC.Trim()));
+                    result = this._entityVek.Getir(p => p.TC.Equals(TC.Trim()));
                 else
                     throw new ArgumentNullException();
             }
-            catch (Exception)
+            catch (Exception )
             {
-                throw new Exception("Hata ile karşılaşıldı");
+                throw new Exception("Hata ile karşılaşıldı.");
             }
             return result;
         }

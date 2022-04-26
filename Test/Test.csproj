@@ -150,6 +150,10 @@
       <Project>{9EFD4566-6575-4745-9486-F7A6716C827C}</Project>
       <Name>IsYapmaKatmani</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OzellestirilmisCalismaAlaniKatmani\OzellestirilmisCalismaAlaniKatmani.csproj">
+      <Project>{95DDCB92-7B7F-40E4-AF80-F731CC527281}</Project>
+      <Name>OzellestirilmisCalismaAlaniKatmani</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VeriErisimKatmani\VeriErisimKatmani.csproj">
       <Project>{D2C1EEC4-01DB-4700-A3F4-FC8F40319BF8}</Project>
       <Name>VeriErisimKatmani</Name>

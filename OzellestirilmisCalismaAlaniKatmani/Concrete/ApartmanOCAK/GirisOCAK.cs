@@ -31,9 +31,9 @@ namespace OzellestirilmisCalismaAlaniKatmani.Concrete.ApartmanOCAK
                 {
                     result = _daireSakiniServisi.Getir(TC);
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    throw new Exception("Veriler getirilirken hata oluştu");
+                    throw new Exception("Veriler getirilirken hata oluştu. ");
                 }
             }
             return result;

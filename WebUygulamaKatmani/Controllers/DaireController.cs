@@ -59,5 +59,30 @@ namespace WebUygulamaKatmani.Controllers
             return Ok();
         }
 
+        [HttpGet()]
+        [Route("getir")]
+        // return List<DaireSakini>
+        public IHttpActionResult DaireSakinleriniGetir(int apartman)
+        {
+            List<DaireSakini> result= null;
+            try
+            {
+                if (apartman > 0)
+                {
+                    result = _daireOCAK.DaireSakinleriniGetir(apartman);
+                    if (result != null && result.Count == 0)
+                    {
+                        result = null;
+                    }
+                }
+                else
+                    throw new ArgumentNullException("Eksik parametre");
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
+            return Ok(result);
+        }
     }
 }

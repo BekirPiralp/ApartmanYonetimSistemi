@@ -17,5 +17,7 @@ namespace OzellestirilmisCalismaAlaniKatmani.Abstract.ApartmanOCAK
         void DaireTanimla(int apartman, DaireSakini daireSakini,Daire daire);
         
         void DaireTanimla(int apartman, DaireSakini daireSakini, int daireSNO);
+
+        List<DaireSakini> DaireSakinleriniGetir(int apartman);
     }
 }
