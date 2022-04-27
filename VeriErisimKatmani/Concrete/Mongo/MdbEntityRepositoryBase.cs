@@ -51,7 +51,7 @@ namespace VeriErisimKatmani.Concrete.Mongo
                     entity.SNo = SiraNoAl();
                     entity.SilDurum = SilDurum.Silinmemis;
                     resulbyID = entity.SNo;
-                    _mongoCollection.InsertOneAsync(entity);
+                    _mongoCollection.InsertOne(entity);
                 }
                 else
                 {
@@ -72,7 +72,7 @@ namespace VeriErisimKatmani.Concrete.Mongo
             try
             {
                 if (_mongoCollection.CountDocuments("{}") > (long)0)
-                    result = _mongoCollection.Find(Filtre).FirstOrDefaultAsync().Result;
+                    result = _mongoCollection.Find(Filtre).FirstOrDefault();
                 else
                     result = null;
                     //throw new Exception("Sistemde kayıtlı veri bulunamadı...");
@@ -92,7 +92,7 @@ namespace VeriErisimKatmani.Concrete.Mongo
                 if (entity != null && entity.SNo > 0)
                 {
                     TEntity entity1 = null;
-                    entity1 = _mongoCollection.Find(p => p.SNo == entity.SNo).FirstOrDefaultAsync().Result; //object id için önlem
+                    entity1 = _mongoCollection.Find(p => p.SNo == entity.SNo).FirstOrDefault(); //object id için önlem
                     if (entity1 != null & entity.SNo == entity1.SNo)
                         entity._id = entity1._id;
                     _mongoCollection.FindOneAndUpdateAsync(p => p.SNo == entity.SNo, entity.ToJson()); //aramaya uygun olan ilk üye için
@@ -116,7 +116,7 @@ namespace VeriErisimKatmani.Concrete.Mongo
             try
             {
                 if (_mongoCollection.Find(Filtre).CountDocuments() > 0)
-                    result = _mongoCollection.Find(Filtre).ToListAsync<TEntity>().Result;
+                    result = _mongoCollection.Find(Filtre).ToList<TEntity>();
                 else
                     result = null;
                     //throw new Exception("Boş veri");
