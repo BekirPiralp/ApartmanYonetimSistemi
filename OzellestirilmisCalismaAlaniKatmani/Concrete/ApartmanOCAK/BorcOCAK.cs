@@ -147,7 +147,7 @@ namespace OzellestirilmisCalismaAlaniKatmani.Concrete.ApartmanOCAK
                     dsakinleri = (from borc in borclar
                               where borc.Kalan > 0 && borc.SilDurum == SilDurum.Silinmemis
                               group borc by borc.DaireSakini into dSakinGrup
-                              where dSakinGrup.Count() > 0
+                              //where dSakinGrup.Count() > 0
                               orderby dSakinGrup.Key
                               select dSakinGrup.Key).ToList();
                     if( dsakinleri != null && dsakinleri.Count > 0)
@@ -158,7 +158,9 @@ namespace OzellestirilmisCalismaAlaniKatmani.Concrete.ApartmanOCAK
                         {
                             foreach (var dsakini in dsakinleri)
                             {
-                                result.Add(_daireSakiniServisi.Getir(dsakini));
+                                DaireSakini daireSakini = _daireSakiniServisi.Getir(dsakini);
+                                if(daireSakini != null)
+                                    result.Add(daireSakini);
                             }
                             if (result.Count == 0)
                                 result = null;
