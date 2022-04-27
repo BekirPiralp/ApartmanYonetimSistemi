@@ -20,7 +20,7 @@ namespace OzellestirilmisCalismaAlaniKatmani.Concrete.ApartmanOCAK
         
         public void GiderOlustur(int apartman,decimal tutar,int tip)
         {
-            if (tip >0 && apartman <= 0 && !(tutar > 0))
+            if (tip <0 || apartman <= 0 || tutar <0)
                 throw new ArgumentNullException("Lütfen parametleri eksiksiz yollayınız");
             try
             {
