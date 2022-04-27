@@ -24,20 +24,20 @@ namespace OzellestirilmisCalismaAlaniKatmani.Concrete.ApartmanOCAK
                 throw new ArgumentNullException("Lütfen parametleri eksiksiz yollayınız");
             try
             {
-                GiderTip giderTip = _giderTipServisi.Getir(tip);
-                if (giderTip != null)
-                {
+                //GiderTip giderTip = _giderTipServisi.Getir(tip);
+               // if (giderTip != null)
+                //{
                     _giderServisi.Ekle(new Gider
                     {
                         Apartman = apartman,
                         Tutar = tutar,
-                        Tip = giderTip.SNo,
+                        Tip = tip,
                         Ay = DateTime.Now.Month,
                         Yil = DateTime.Now.Year
                     });
-                }
-                else
-                    throw new Exception("İlgili gider bulunamadı");
+               // }
+               // else
+                //    throw new Exception("İlgili gider bulunamadı");
             }
             catch (Exception)
             {
