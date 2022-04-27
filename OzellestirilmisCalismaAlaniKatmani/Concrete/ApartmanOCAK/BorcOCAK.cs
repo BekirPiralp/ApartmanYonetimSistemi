@@ -156,6 +156,7 @@ namespace OzellestirilmisCalismaAlaniKatmani.Concrete.ApartmanOCAK
 
                         try
                         {
+                            
                             foreach (var dsakini in dsakinleri)
                             {
                                 DaireSakini daireSakini = _daireSakiniServisi.Getir(dsakini);

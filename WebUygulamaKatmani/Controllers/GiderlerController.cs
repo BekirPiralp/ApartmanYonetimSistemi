@@ -25,7 +25,7 @@ namespace WebUygulamaKatmani.Controllers
         {
             try
             {
-                if (apartman > 0 && tutar > 0 && tip > 0)
+                if (apartman > 0 && tutar >= 0 && tip >= 0)
                 {
                     _giderlerOCAK.GiderOlustur(apartman, tutar, tip);
                 }
